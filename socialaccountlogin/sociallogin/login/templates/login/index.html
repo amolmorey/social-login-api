@@ -1,0 +1,15 @@
+{% load socialaccount %}
+{% providers_media_js %}
+<html>
+<head><title>login page</title></head>
+<body>
+
+{% if user %}<p> Hi <strong>{{ user }}</strong>, welcome to social login app</p>
+{% else %}
+
+<button><a href="#">login with google</a> </button>
+<button><a href="{% provider_login_url "facebook" method="js_sdk" %}">login with facebook</a> </button>
+{% endif %}
+
+</body>
+</html>
